@@ -139,30 +139,6 @@
   </entry>
   
   <entry>
-    <title>test</title>
-    <link href="http://our-orginization.github.io/2017/09/25/test/"/>
-    <id>http://our-orginization.github.io/2017/09/25/test/</id>
-    <published>2017-09-24T16:00:00.000Z</published>
-    <updated>2018-01-22T09:14:38.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>本文主要是一个nodejs的学习笔记。</p><a id="more"></a><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>NodeJs 可以解析Js代码（没有浏览器安全级别的限制）</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本文主要是一个nodejs的学习笔记。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Node" scheme="http://our-orginization.github.io/categories/Node/"/>
-    
-    
-      <category term="javascript" scheme="http://our-orginization.github.io/tags/javascript/"/>
-    
-      <category term="Node" scheme="http://our-orginization.github.io/tags/Node/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Nodejs</title>
     <link href="http://our-orginization.github.io/2017/09/25/nodejs/"/>
     <id>http://our-orginization.github.io/2017/09/25/nodejs/</id>
