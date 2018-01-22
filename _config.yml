@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Daisy
+title: Daisy & Will
 subtitle:
-keyworks: Web, 前端, ES6, angular
+keyworks: Web, 前端, ES6, angular, java
 description: 众中少言，无事早归
-author: Daisy
+author: Daisy && Will
 language: zh-Hans
 timezone:
 
@@ -75,7 +75,7 @@ deploy:
 
 # Social links
 social:
-  GitHub: https://github.com/DaisyGXL
+  GitHub: https://github.com/our-orginization
 
 search:
   path: search.xml

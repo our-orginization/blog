@@ -123,7 +123,7 @@ font:
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 social:
-  Github: https://github.com/DaisyGXL
+  Github: https://github.com/our-orginization
 
 # Social Links Icons
 # Icon Mapping:
@@ -303,7 +303,7 @@ facebook_comments_plugin:
 
 gitment:
   enable: true
-  githubID: daisygxl.github.io
+  githubID: our-orginization.github.io
   repo: daisygxl.github.io
   ClientID: 180687caf46b105720ca
   ClientSecret: 4846ba3cc2d5f37a8c41da8b998e9e5d5e315ad7

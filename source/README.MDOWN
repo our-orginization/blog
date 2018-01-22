@@ -1,8 +1,8 @@
-[博客地址](https://DaisyGXL.github.io/)
+[博客地址](https://our-orginization.github.io/)
 
-[建站日志](https://DaisyGXL.github.io/weblog/)
+[建站日志](https://our-orginization.github.io/weblog/)
 
-[给我留言](https://DaisyGXL.github.io/guestbook/)
+[给我留言](https://our-orginization.github.io/guestbook/)
 
 ## 浏览器支持 Browser support
 

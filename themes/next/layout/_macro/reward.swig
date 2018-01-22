@@ -4,7 +4,7 @@
     -------------本文结束 <i class="fa fa-apple"></i> 感谢您的阅读-------------
 </blockquote>
 
-  <span id="inline-green" style="border-radius:3px;">作者</span>：<a class="link-blue" href="https://github.com/DaisyGXL" target="_blank">Daisy</a>。
+  <span id="inline-green" style="border-radius:3px;">作者</span>：<a class="link-blue" href="https://github.com/our-orginization" target="_blank">Daisy</a>。
 
   <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
     <div>{{ theme.reward_comment }}</div>
