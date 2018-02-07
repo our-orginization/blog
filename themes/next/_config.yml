@@ -6,7 +6,7 @@
 favicon: /favicon/favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "Hexo, NexT, Neveryu, Never_yu, Blog, Node.js, Git, PHP, JAVA, JAVASCRIPT, HTML, CSS, jQuery, Angular, Vue, React"
+keywords: "Hexo, NexT, Daisy, Will, Blog, Node.js, Git, JAVA, JAVASCRIPT, HTML, CSS, jQuery, Angular, Vue"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -301,14 +301,6 @@ facebook_comments_plugin:
   width: 100%       # default width is 550px
   scheme: light     # default scheme is light (light or dark)
 
-gitment:
-  enable: true
-  githubID: our-orginization.github.io
-  repo: our-orginization.github.io
-  ClientID: 8cf598e733def9645a71
-  ClientSecret: 6d1f2b9bffe5c8fea2f926b7bd59b68c271d9098
-  lazy: true
-
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
@@ -414,3 +406,7 @@ version: 5.0.1
 reward_comment: 满分是10分的话，这篇文章你给几分
 alipay: /images/alipay.png
 wechatpay: /images/wechatpay.png
+
+# Support for LiveRe comments system.
+# You can get your uid from https://livere.com/insight/myCode (General web site)
+livere_uid: MTAyMC8zMzk2OC8xMDUwMw
