@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javascript," />
+  <meta name="keywords" content="javascript,调试,HTML," />
 
 
 
@@ -86,18 +86,20 @@
 
 
 
-<meta name="description" content="本文用于记录平时浏览资料或者工作过程中遇到的js关键知识点。">
-<meta name="keywords" content="javascript">
+<meta name="description" content="本文为日常开发过程中HTML和JS基本调试方法汇总。">
+<meta name="keywords" content="javascript,调试,HTML">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript常见问题汇总（二）">
 <meta property="og:url" content="http://our-orginization.github.io/2018/01/16/javascript常见问题汇总（二）/index.html">
 <meta property="og:site_name" content="Daisy &amp; Will">
-<meta property="og:description" content="本文用于记录平时浏览资料或者工作过程中遇到的js关键知识点。">
+<meta property="og:description" content="本文为日常开发过程中HTML和JS基本调试方法汇总。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-08T07:34:47.000Z">
+<meta property="og:image" content="http://our-orginization.github.io/2018/01/16/images/element_locate.png">
+<meta property="og:updated_time" content="2018-02-08T09:34:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript常见问题汇总（二）">
-<meta name="twitter:description" content="本文用于记录平时浏览资料或者工作过程中遇到的js关键知识点。">
+<meta name="twitter:description" content="本文为日常开发过程中HTML和JS基本调试方法汇总。">
+<meta name="twitter:image" content="http://our-orginization.github.io/2018/01/16/images/element_locate.png">
 
 
 
@@ -558,8 +560,35 @@
       
 
       
-        <p>本文用于记录平时浏览资料或者工作过程中遇到的js关键知识点。</p>
+        <p>本文为日常开发过程中HTML和JS基本调试方法汇总。</p>
 <a id="more"></a>
+<h2 id="快速进入对着页面任何元素-Elements"><a href="#快速进入对着页面任何元素-Elements" class="headerlink" title="快速进入对着页面任何元素(Elements)"></a>快速进入对着页面任何元素(Elements)</h2><ul>
+<li>点击右键，选择“检查”</li>
+<li>使用Ctrl+Shift+I(Mac:cmd+option+i)打开开发者面板，选择元素(Elements)标签。Element标签的方法</li>
+</ul>
+<h2 id="元素-Elements-标签的左侧"><a href="#元素-Elements-标签的左侧" class="headerlink" title="元素(Elements)标签的左侧"></a>元素(Elements)标签的左侧</h2><h3 id="DOM树"><a href="#DOM树" class="headerlink" title="DOM树"></a>DOM树</h3><p>DOM树可以通过点击左边的小三角展开或收起，便于查看DOM元素树。<br>点击鼠标右键，会有更多的选择：</p>
+<ul>
+<li>Add attribute - 对选中的元素添加新的属性</li>
+<li>Edit attribute - 编辑某个属性，当你鼠标在某个属性上方点击右键时方才显示。</li>
+<li>Edit as HTML — 你可以编辑整个HTML；如果你想把元素的一部分拷贝使用，这样操作也很方便。</li>
+<li>Copy outerHTML — 将整个标签及其内容拷贝。</li>
+<li>Copy selector — 拷贝CSS选择器(div &gt; span &gt; #id)</li>
+<li>Copy XPath — 拷贝XPath </li>
+<li>Cut element — 剪切元素</li>
+<li>Copy element — 拷贝元素</li>
+<li>Hide element — 通过添加display:none来临时性地隐藏元素；(cmd+H/Ctrl+H)</li>
+<li>Delete element — 删除元素，可以使用cmd+z来取消删除</li>
+<li>Expand all — 将所有节点展开</li>
+<li>Collapse all — 将所有节点折叠</li>
+<li>:active — 将元素设置为active状态*</li>
+<li>:hover — 将元素设置为hover状态*</li>
+<li>:focus — 将元素设置为focus状态*</li>
+<li>:visited — 将元素设置为已访问状态*</li>
+<li>Scroll into view — 将网页快速滑动到元素所在位置</li>
+<li>Break on… -&gt;subtree modification — 在子节点被修改的时候中断执行</li>
+<li>Break on… -&gt;attribute modification — 在属性被修改的时候中断执行<h3 id="元素快速定位"><a href="#元素快速定位" class="headerlink" title="元素快速定位"></a>元素快速定位</h3><img src="../images/element_locate.png"></li>
+</ul>
+
       
     </div>
 
@@ -611,6 +640,10 @@
           
             <a href="/tags/javascript/" rel="tag"><i class="fa fa-tag"></i> javascript</a>
           
+            <a href="/tags/调试/" rel="tag"><i class="fa fa-tag"></i> 调试</a>
+          
+            <a href="/tags/HTML/" rel="tag"><i class="fa fa-tag"></i> HTML</a>
+          
         </div>
       
 
@@ -618,8 +651,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/09/Flex实现五种常用布局/" rel="next" title="Flex实现五种常用布局">
-                <i class="fa fa-chevron-left"></i> Flex实现五种常用布局
+              <a href="/2018/01/16/Chrome在电脑上模拟微信浏览器/" rel="next" title="Chrome在电脑上模拟微信浏览器">
+                <i class="fa fa-chevron-left"></i> Chrome在电脑上模拟微信浏览器
               </a>
             
           </div>
@@ -736,7 +769,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -782,7 +815,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#快速进入对着页面任何元素-Elements"><span class="nav-number">1.</span> <span class="nav-text">快速进入对着页面任何元素(Elements)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元素-Elements-标签的左侧"><span class="nav-number">2.</span> <span class="nav-text">元素(Elements)标签的左侧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM树"><span class="nav-number">2.1.</span> <span class="nav-text">DOM树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元素快速定位"><span class="nav-number">2.2.</span> <span class="nav-text">元素快速定位</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
