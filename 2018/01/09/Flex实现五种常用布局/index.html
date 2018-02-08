@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="github,hexo,blog," />
+  <meta name="keywords" content="css,flex,布局,Layout," />
 
 
 
@@ -86,18 +86,24 @@
 
 
 
-<meta name="description" content="本文主要介绍了如何基于Hexo生成一个静态博客站点，并通过github发布。">
-<meta name="keywords" content="github,hexo,blog">
+<meta name="description" content="原文链接">
+<meta name="keywords" content="css,flex,布局,Layout">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基于Hexo和GitPages搭建个人博客">
-<meta property="og:url" content="http://our-orginization.github.io/2017/08/28/blog/index.html">
+<meta property="og:title" content="Flex实现五种常用布局">
+<meta property="og:url" content="http://our-orginization.github.io/2018/01/09/Flex实现五种常用布局/index.html">
 <meta property="og:site_name" content="Daisy &amp; Will">
-<meta property="og:description" content="本文主要介绍了如何基于Hexo生成一个静态博客站点，并通过github发布。">
+<meta property="og:description" content="原文链接">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-04T03:21:06.000Z">
+<meta property="og:image" content="https://p0.meituan.net/dpnewvc/096980425eb89f986991f866639fea4543883.png">
+<meta property="og:image" content="https://p1.meituan.net/dpnewvc/d1755ca8e911e19045f232bede34216946140.png">
+<meta property="og:image" content="https://p0.meituan.net/dpnewvc/e04fc60927afab215d7d2d38570dbaa645908.png">
+<meta property="og:image" content="https://p0.meituan.net/dpnewvc/fa4df59463d759605a1cf0ebeb04927e40963.png">
+<meta property="og:image" content="https://p1.meituan.net/dpnewvc/c0bceb861d99c29b4eba816b755eabcc71777.png">
+<meta property="og:updated_time" content="2018-02-08T07:22:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基于Hexo和GitPages搭建个人博客">
-<meta name="twitter:description" content="本文主要介绍了如何基于Hexo生成一个静态博客站点，并通过github发布。">
+<meta name="twitter:title" content="Flex实现五种常用布局">
+<meta name="twitter:description" content="原文链接">
+<meta name="twitter:image" content="https://p0.meituan.net/dpnewvc/096980425eb89f986991f866639fea4543883.png">
 
 
 
@@ -105,7 +111,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Pisces',
-    sidebar: {"position":"left","display":"always"},
+    sidebar: {"position":"left","display":"hide"},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -118,12 +124,12 @@
 
 
 
-  <link rel="canonical" href="http://our-orginization.github.io/2017/08/28/blog/"/>
+  <link rel="canonical" href="http://our-orginization.github.io/2018/01/09/Flex实现五种常用布局/"/>
 
 
 <!-- 网页加载条 -->
 <script src="/js/src/pace.min.js"></script>
-  <title> 基于Hexo和GitPages搭建个人博客 | Daisy & Will </title>
+  <title> Flex实现五种常用布局 | Daisy & Will </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -494,7 +500,7 @@
             
             
               
-                基于Hexo和GitPages搭建个人博客
+                Flex实现五种常用布局
               
             
           </h1>
@@ -506,8 +512,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-08-28T00:00:00+08:00" content="2017-08-28">
-              2017-08-28
+            <time itemprop="dateCreated" datetime="2018-01-09T00:00:00+08:00" content="2018-01-09">
+              2018-01-09
             </time>
           </span>
 
@@ -520,8 +526,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
+                  <a href="/categories/Node/" itemprop="url" rel="index">
+                    <span itemprop="name">Node</span>
                   </a>
                 </span>
 
@@ -558,37 +564,18 @@
       
 
       
-        <p>本文主要介绍了如何基于Hexo生成一个静态博客站点，并通过github发布。</p>
+        <p><a href="https://github.com/meikidd/flex-layout" target="_blank" rel="external">原文链接</a> </p>
 <a id="more"></a>
-<h1 id="Hexo简介"><a href="#Hexo简介" class="headerlink" title="Hexo简介"></a>Hexo简介</h1><blockquote>
-<p>A fast, simple &amp; powerful blog framework.–Hexo官网</p>
-</blockquote>
-<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。它有下面几个特点：</p>
-<ul>
-<li>超快速度<br>Node.js 所带来的超快生成速度，让上百个页面在几秒内瞬间完成渲染。</li>
-<li>支持Markdown<br>Hexo 支持 GitHub Flavored Markdown 的所有功能，甚至可以整合 Octopress 的大多数插件。</li>
-<li>一键部署<br>只需一条指令即可部署到Github Pages，或其他网站</li>
-<li>丰富的插件<br>Hexo 拥有强大的插件系统，安装插件可以让 Hexo 支持 Jade, CoffeeScript。  </li>
-</ul>
-<p>通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的 标签插件 来快速的插入特定形式的内容。</p>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>安装 Hexo 相当简单。然而在安装前，您必须检查电脑中是否已安装下列应用程序：</p>
-<ul>
-<li>Node.js</li>
-<li>Git</li>
-</ul>
-<p>网上有很多的安装教程，这里不做赘述。<br>接下来只需要使用 npm 即可完成 Hexo 的安装。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
-<p>安装 Hexo 完成后，我们首先需要为我们的项目创建一个指定文件夹，在指定文件夹中执行下列命令， Hexo 将会在指定文件夹中新建所需要的文件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init</div></pre></td></tr></table></figure></p>
-<p>等待安装，安装完成后，<span id="inline-green">指定文件夹</span> 的目录如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── _config.yml</div><div class="line">├── package.json</div><div class="line">├── scaffolds</div><div class="line">├── source</div><div class="line">|   ├── _drafts</div><div class="line">|   └── _posts</div><div class="line">└──</div></pre></td></tr></table></figure></p>
-<p>继续执行命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div><div class="line">$ hexo s --debug</div></pre></td></tr></table></figure></p>
-<p>Hexo 将 source 文件夹中除 <em>posts 文件夹之外，开头命名为 </em>(下划线)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件夹会被拷贝过去。<br>这个时候，我们在浏览器中访问 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> ，就可以看到基于 Hexo 的默认主题的原型。</p>
-<h1 id="主题扩展功能"><a href="#主题扩展功能" class="headerlink" title="主题扩展功能"></a>主题扩展功能</h1><p>首先，我们需要明白：</p>
-<blockquote>
-<p>在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml 。其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。<br>  我们约定，将前者称为 <strong>站点配置文件</strong>，后者称为 <strong>主题配置文件</strong><br>  可以通过hexo的官网选择喜欢的模板进行使用。</p>
-</blockquote>
-<h1 id="发布到github-io"><a href="#发布到github-io" class="headerlink" title="发布到github.io"></a>发布到github.io</h1><p>在github中创建仓库，命名方式为<strong>用户名.github.io</strong>，一定要以这种方式命名，并且每个github账户只能有一个pages。在站点配置文件中增加发布仓库:<br><figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: https://github.com/DaisyGXL/DaisyGXL.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
-<p>运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div><div class="line">$ hexo d</div></pre></td></tr></table></figure></p>
-<p>完成编译发布过程。 </p>
-
+<h2 id="经典上-中-下布局"><a href="#经典上-中-下布局" class="headerlink" title="经典上-中-下布局"></a>经典上-中-下布局</h2><p>当页面内容高度小于可视区域高度时，footer 吸附在底部；当页面内容高度大于可视区域高度时，footer 被撑开排在 content 下方。<br><img src="https://p0.meituan.net/dpnewvc/096980425eb89f986991f866639fea4543883.png" width="800px" height="350px"><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">header</span>&gt;</span>HEADER<span class="tag">&lt;/<span class="name">header</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">article</span>&gt;</span>CONTENT<span class="tag">&lt;/<span class="name">article</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">footer</span>&gt;</span>FOOTER<span class="tag">&lt;/<span class="name">footer</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">  <span class="attribute">min-height</span>: <span class="number">100vh</span>;</div><div class="line">  <span class="attribute">display</span>: flex;</div><div class="line">  <span class="attribute">flex-direction</span>: column;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">article</span> &#123;</div><div class="line">  <span class="attribute">flex</span>: auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="在上-中-下布局的基础上，加了左侧定宽-sidebar"><a href="#在上-中-下布局的基础上，加了左侧定宽-sidebar" class="headerlink" title="在上-中-下布局的基础上，加了左侧定宽 sidebar"></a>在上-中-下布局的基础上，加了左侧定宽 sidebar</h2><p><img src="https://p1.meituan.net/dpnewvc/d1755ca8e911e19045f232bede34216946140.png" width="800px" height="350px"><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">header</span>&gt;</span>HEADER<span class="tag">&lt;/<span class="name">header</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">aside</span>&gt;</span>ASIDE<span class="tag">&lt;/<span class="name">aside</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">article</span>&gt;</span>CONTENT<span class="tag">&lt;/<span class="name">article</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">footer</span>&gt;</span>FOOTER<span class="tag">&lt;/<span class="name">footer</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">    <span class="attribute">min-height</span>: <span class="number">100vh</span>;</div><div class="line">    <span class="attribute">display</span>: flex;</div><div class="line">    <span class="attribute">flex-direction</span>: column;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.content</span> &#123;</div><div class="line">    <span class="attribute">flex</span>: auto;</div><div class="line">    <span class="attribute">display</span>: flex;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.content</span> <span class="selector-tag">article</span> &#123;</div><div class="line">    <span class="attribute">flex</span>: auto;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.content</span> <span class="selector-tag">aside</span> &#123;</div><div class="line">    <span class="attribute">flex</span>: none;</div><div class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<h2 id="左边是定宽-sidebar，右边是上-中-下布局。"><a href="#左边是定宽-sidebar，右边是上-中-下布局。" class="headerlink" title="左边是定宽 sidebar，右边是上-中-下布局。"></a>左边是定宽 sidebar，右边是上-中-下布局。</h2><p><img src="https://p0.meituan.net/dpnewvc/e04fc60927afab215d7d2d38570dbaa645908.png" width="800px" height="350px"><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">aside</span>&gt;</span>ASIDE<span class="tag">&lt;/<span class="name">aside</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">header</span>&gt;</span>HEADER<span class="tag">&lt;/<span class="name">header</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">article</span>&gt;</span>CONTENT<span class="tag">&lt;/<span class="name">article</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">footer</span>&gt;</span>FOOTER<span class="tag">&lt;/<span class="name">footer</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">    <span class="attribute">min-height</span>: <span class="number">100vh</span>;</div><div class="line">    <span class="attribute">display</span>: flex;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-tag">aside</span> &#123;</div><div class="line">    <span class="attribute">flex</span>: none;</div><div class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.content</span> &#123;</div><div class="line">    <span class="attribute">flex</span>: auto;</div><div class="line">    <span class="attribute">display</span>: flex;</div><div class="line">    <span class="attribute">flex-direction</span>: column;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.content</span> <span class="selector-tag">article</span> &#123;</div><div class="line">    <span class="attribute">flex</span>: auto;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<h2 id="还是上-中-下布局，区别是-header-固定在顶部，不会随着页面滚动。"><a href="#还是上-中-下布局，区别是-header-固定在顶部，不会随着页面滚动。" class="headerlink" title="还是上-中-下布局，区别是 header 固定在顶部，不会随着页面滚动。"></a>还是上-中-下布局，区别是 header 固定在顶部，不会随着页面滚动。</h2><p><img src="https://p0.meituan.net/dpnewvc/fa4df59463d759605a1cf0ebeb04927e40963.png" width="800px" height="350px"><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">header</span>&gt;</span>HEADER<span class="tag">&lt;/<span class="name">header</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">article</span>&gt;</span>CONTENT<span class="tag">&lt;/<span class="name">article</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">footer</span>&gt;</span>FOOTER<span class="tag">&lt;/<span class="name">footer</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">    <span class="attribute">min-height</span>: <span class="number">100vh</span>;</div><div class="line">    <span class="attribute">display</span>: flex;</div><div class="line">    <span class="attribute">flex-direction</span>: column;</div><div class="line">    <span class="attribute">padding-top</span>: <span class="number">60px</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-tag">header</span> &#123;</div><div class="line">    <span class="attribute">height</span>: <span class="number">60px</span>;</div><div class="line">    <span class="attribute">position</span>: fixed;</div><div class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">right</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-tag">article</span> &#123;</div><div class="line">    <span class="attribute">flex</span>: auto;</div><div class="line">    <span class="attribute">height</span>: <span class="number">1000px</span>;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<h2 id="左侧-sidebar-固定在左侧且与视窗同高，当内容超出视窗高度时，在-sidebar-内部出现滚动条。左右两侧滚动条互相独立。"><a href="#左侧-sidebar-固定在左侧且与视窗同高，当内容超出视窗高度时，在-sidebar-内部出现滚动条。左右两侧滚动条互相独立。" class="headerlink" title="左侧 sidebar 固定在左侧且与视窗同高，当内容超出视窗高度时，在 sidebar 内部出现滚动条。左右两侧滚动条互相独立。"></a>左侧 sidebar 固定在左侧且与视窗同高，当内容超出视窗高度时，在 sidebar 内部出现滚动条。左右两侧滚动条互相独立。</h2><p><img src="https://p1.meituan.net/dpnewvc/c0bceb861d99c29b4eba816b755eabcc71777.png" width="800px" height="350px"><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">aside</span>&gt;</span></div><div class="line">    ASIDE</div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>item<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>item<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- many items --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>item<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">aside</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">header</span>&gt;</span>HEADER<span class="tag">&lt;/<span class="name">header</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">article</span>&gt;</span>CONTENT<span class="tag">&lt;/<span class="name">article</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">footer</span>&gt;</span>FOOTER<span class="tag">&lt;/<span class="name">footer</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">  <span class="attribute">height</span>: <span class="number">100vh</span>;</div><div class="line">  <span class="attribute">display</span>: flex;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">aside</span> &#123;</div><div class="line">  <span class="attribute">flex</span>: none;</div><div class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">  <span class="attribute">overflow-y</span>: auto;</div><div class="line">  <span class="attribute">display</span>: block;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.content</span> &#123;</div><div class="line">  <span class="attribute">flex</span>: auto;</div><div class="line">  <span class="attribute">display</span>: flex;</div><div class="line">  <span class="attribute">flex-direction</span>: column;</div><div class="line">  <span class="attribute">overflow-y</span>: auto;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.content</span> <span class="selector-tag">article</span> &#123;</div><div class="line">  <span class="attribute">flex</span>: auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -638,11 +625,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/github/" rel="tag"><i class="fa fa-tag"></i> github</a>
+            <a href="/tags/css/" rel="tag"><i class="fa fa-tag"></i> css</a>
           
-            <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
+            <a href="/tags/flex/" rel="tag"><i class="fa fa-tag"></i> flex</a>
           
-            <a href="/tags/blog/" rel="tag"><i class="fa fa-tag"></i> blog</a>
+            <a href="/tags/布局/" rel="tag"><i class="fa fa-tag"></i> 布局</a>
+          
+            <a href="/tags/Layout/" rel="tag"><i class="fa fa-tag"></i> Layout</a>
           
         </div>
       
@@ -651,16 +640,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/28/ES6/" rel="next" title="ES6项目构建">
-                <i class="fa fa-chevron-left"></i> ES6项目构建
+              <a href="/2017/12/25/移动端页面开发手记（一）/" rel="next" title="移动端页面开发手记（一）">
+                <i class="fa fa-chevron-left"></i> 移动端页面开发手记（一）
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/14/mocha/" rel="prev" title="mocha+supertest单元测试">
-                mocha+supertest单元测试 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/01/16/javascript常见问题汇总（一）/" rel="prev" title="javascript常见问题汇总（一）">
+                javascript常见问题汇总（一） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -815,7 +804,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo简介"><span class="nav-number">1.</span> <span class="nav-text">Hexo简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主题扩展功能"><span class="nav-number">3.</span> <span class="nav-text">主题扩展功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#发布到github-io"><span class="nav-number">4.</span> <span class="nav-text">发布到github.io</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#经典上-中-下布局"><span class="nav-number">1.</span> <span class="nav-text">经典上-中-下布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在上-中-下布局的基础上，加了左侧定宽-sidebar"><span class="nav-number">2.</span> <span class="nav-text">在上-中-下布局的基础上，加了左侧定宽 sidebar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#左边是定宽-sidebar，右边是上-中-下布局。"><span class="nav-number">3.</span> <span class="nav-text">左边是定宽 sidebar，右边是上-中-下布局。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#还是上-中-下布局，区别是-header-固定在顶部，不会随着页面滚动。"><span class="nav-number">4.</span> <span class="nav-text">还是上-中-下布局，区别是 header 固定在顶部，不会随着页面滚动。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#左侧-sidebar-固定在左侧且与视窗同高，当内容超出视窗高度时，在-sidebar-内部出现滚动条。左右两侧滚动条互相独立。"><span class="nav-number">5.</span> <span class="nav-text">左侧 sidebar 固定在左侧且与视窗同高，当内容超出视窗高度时，在 sidebar 内部出现滚动条。左右两侧滚动条互相独立。</span></a></li></ol></div>
             
           </div>
         </section>

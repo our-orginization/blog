@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="node,单元测试,mocha,supertest," />
+  <meta name="keywords" content="blog,github,hexo," />
 
 
 
@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="最近一段时间刚刚接手了一个angular1.3前端+node服务器端多项目，作为一个刚刚入门node的新手，在熟悉了node的代码后便对已有的接口进行了单元测试用例的编写，此篇博客用于简单的记录。">
-<meta name="keywords" content="node,单元测试,mocha,supertest">
+<meta name="description" content="本文主要介绍了如何基于Hexo生成一个静态博客站点，并通过github发布。">
+<meta name="keywords" content="blog,github,hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mocha+supertest单元测试">
-<meta property="og:url" content="http://our-orginization.github.io/2017/09/14/mocha/index.html">
+<meta property="og:title" content="基于Hexo和GitPages搭建个人博客">
+<meta property="og:url" content="http://our-orginization.github.io/2017/08/28/基于Hexo和GitPages搭建个人博客/index.html">
 <meta property="og:site_name" content="Daisy &amp; Will">
-<meta property="og:description" content="最近一段时间刚刚接手了一个angular1.3前端+node服务器端多项目，作为一个刚刚入门node的新手，在熟悉了node的代码后便对已有的接口进行了单元测试用例的编写，此篇博客用于简单的记录。">
+<meta property="og:description" content="本文主要介绍了如何基于Hexo生成一个静态博客站点，并通过github发布。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-04T03:21:06.000Z">
+<meta property="og:updated_time" content="2018-02-08T07:21:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mocha+supertest单元测试">
-<meta name="twitter:description" content="最近一段时间刚刚接手了一个angular1.3前端+node服务器端多项目，作为一个刚刚入门node的新手，在熟悉了node的代码后便对已有的接口进行了单元测试用例的编写，此篇博客用于简单的记录。">
+<meta name="twitter:title" content="基于Hexo和GitPages搭建个人博客">
+<meta name="twitter:description" content="本文主要介绍了如何基于Hexo生成一个静态博客站点，并通过github发布。">
 
 
 
@@ -105,7 +105,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Pisces',
-    sidebar: {"position":"left","display":"always"},
+    sidebar: {"position":"left","display":"hide"},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -118,12 +118,12 @@
 
 
 
-  <link rel="canonical" href="http://our-orginization.github.io/2017/09/14/mocha/"/>
+  <link rel="canonical" href="http://our-orginization.github.io/2017/08/28/基于Hexo和GitPages搭建个人博客/"/>
 
 
 <!-- 网页加载条 -->
 <script src="/js/src/pace.min.js"></script>
-  <title> mocha+supertest单元测试 | Daisy & Will </title>
+  <title> 基于Hexo和GitPages搭建个人博客 | Daisy & Will </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -494,7 +494,7 @@
             
             
               
-                mocha+supertest单元测试
+                基于Hexo和GitPages搭建个人博客
               
             
           </h1>
@@ -506,8 +506,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-09-14T00:00:00+08:00" content="2017-09-14">
-              2017-09-14
+            <time itemprop="dateCreated" datetime="2017-08-28T00:00:00+08:00" content="2017-08-28">
+              2017-08-28
             </time>
           </span>
 
@@ -520,8 +520,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/node/" itemprop="url" rel="index">
-                    <span itemprop="name">node</span>
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
                   </a>
                 </span>
 
@@ -558,27 +558,36 @@
       
 
       
-        <p>最近一段时间刚刚接手了一个angular1.3前端+node服务器端多项目，作为一个刚刚入门node的新手，在熟悉了node的代码后便对已有的接口进行了单元测试用例的编写，此篇博客用于简单的记录。</p>
+        <p>本文主要介绍了如何基于Hexo生成一个静态博客站点，并通过github发布。</p>
 <a id="more"></a>
-<h2 id="Mocha介绍"><a href="#Mocha介绍" class="headerlink" title="Mocha介绍"></a>Mocha介绍</h2><p>Mocha是非常流行JavaScript测试框架之一，在浏览器和Node环境都可以使用。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm i mocha -g</div></pre></td></tr></table></figure>
-<h2 id="简单测试脚本"><a href="#简单测试脚本" class="headerlink" title="简单测试脚本"></a>简单测试脚本</h2><p>1.首先写一个简单的例子，add.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function add(a, b)&#123; </div><div class="line">    return a+b; </div><div class="line">&#125; </div><div class="line">module.exports = add;</div></pre></td></tr></table></figure></p>
-<p>2.新建测试脚本 add.test.js，一般命名规则测试脚本和原脚本同名，但是后缀名为.test.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> calcu = <span class="built_in">require</span>(<span class="string">'./add'</span>);</div><div class="line"><span class="keyword">let</span> should = <span class="built_in">require</span>(<span class="string">"should"</span>);</div><div class="line"></div><div class="line">describe(<span class="string">"add func test"</span>,() =&gt; &#123;</div><div class="line">    it(<span class="string">'2 add 2 should equal 4'</span>,() =&gt; &#123;</div><div class="line">      calcu.add(<span class="number">2</span>,<span class="number">2</span>).should.equal(<span class="number">4</span>)</div><div class="line">    &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>3.执行测试用例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mocha demo1/mocha demo1/calcu.test.js</div></pre></td></tr></table></figure></p>
-<p>describe 表示测试套件，是一序列相关程序的测试<br>it表示单元测试(unit test)，也就是测试的最小单位。</p>
-<h2 id="断言库"><a href="#断言库" class="headerlink" title="断言库"></a>断言库</h2><p>断言库可以理解为比较函数，也就是断言函数是否和预期一致，如果一致则表示测试通过，如果不一致表示测试失败，一个unit test里面可以包含多个断言语句。<br>本身mocha是不包含断言库的，所以必须引入第三方断言库，目前比较受欢迎的断言库  有 should.js、expect.js 、chai，而chai包含should、expect和assert三种风格，可扩展性比较强。<br>这里举例说明should断言方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div></pre></td><td class="code"><pre><div class="line">// 全等，相当于=== </div><div class="line">.exactly </div><div class="line">(5).should.be.exactly(5) </div><div class="line"></div><div class="line">// 对象存在 </div><div class="line">.ok </div><div class="line">true.should.be.ok; </div><div class="line">&apos;yay&apos;.should.be.ok; </div><div class="line">(1).should.be.ok; </div><div class="line">(&#123;&#125;).should.be.ok; </div><div class="line">false.should.not.be.ok; </div><div class="line"></div><div class="line">// 真 </div><div class="line">.true </div><div class="line">(5===5).should.be.true </div><div class="line">(err === null).should.be.true; </div><div class="line"></div><div class="line">// 相等,相当于 == </div><div class="line">.eql </div><div class="line">(&#123; foo: &apos;bar&apos; &#125;).should.eql(&#123; foo: &apos;bar&apos; &#125;); </div><div class="line">[1,2,3].should.eql([1,2,3]); </div><div class="line">// see next example it is correct, even if it is different types, but actual content the same </div><div class="line">[1, 2, 3].should.eql(&#123; &apos;0&apos;: 1, &apos;1&apos;: 2, &apos;2&apos;: 3 &#125;); </div><div class="line"></div><div class="line">// 非数字 </div><div class="line">.NaN </div><div class="line">(undefined + 0).should.be.NaN; </div><div class="line"></div><div class="line">// 判断类型 </div><div class="line">.typeof </div><div class="line">user.should.be.type(&apos;object&apos;); </div><div class="line">&apos;test&apos;.should.be.type(&apos;string&apos;); </div><div class="line"></div><div class="line">// 构造函数的一个实例 </div><div class="line">.instanceof user.should.be.an.instanceof(User); </div><div class="line">[].should.be.an.instanceOf(Array); </div><div class="line"></div><div class="line">// 存在 </div><div class="line">.exist() </div><div class="line">should.not.exist(err) </div><div class="line"></div><div class="line">//深度包含 </div><div class="line">.containDeep() </div><div class="line">[[1],[2],[3]].should.containDeep([[3]]); </div><div class="line">[[1],[2],[3, 4]].should.containDeep([[3]]); </div><div class="line">[&#123;a: &apos;a&apos;&#125;, &#123;b: &apos;b&apos;, c: &apos;c&apos;&#125;].should.containDeep([&#123;a: &apos;a&apos;&#125;]); </div><div class="line">[&#123;a: &apos;a&apos;&#125;, &#123;b: &apos;b&apos;, c: &apos;c&apos;&#125;].should.containDeep([&#123;b: &apos;b&apos;&#125;]); </div><div class="line"></div><div class="line">// 抛出异常 </div><div class="line">.throw()和throwError() </div><div class="line">(function()&#123; throw new Error(&apos;fail&apos;); &#125;).should.throw(); </div><div class="line">(function()&#123; throw new Error(&apos;fail&apos;); &#125;).should.throw(&apos;fail&apos;); </div><div class="line"></div><div class="line">// http响应的头部包含 </div><div class="line">.header </div><div class="line">res.should.have.header(&apos;content-length&apos;); </div><div class="line">res.should.have.header(&apos;Content-Length&apos;, &apos;123&apos;); </div><div class="line"></div><div class="line">// 包含或等价于 </div><div class="line">.containEql </div><div class="line">(&#123; b: 10 &#125;).should.containEql(&#123; b: 10 &#125;); </div><div class="line">([1, 2, &#123; a: 10 &#125;]).should.containEql(&#123; a: 10 &#125;);</div></pre></td></tr></table></figure></p>
-<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><h3 id="常规函数测试"><a href="#常规函数测试" class="headerlink" title="常规函数测试"></a>常规函数测试</h3><p>如上面的add.test.js</p>
-<h3 id="异步函数测试"><a href="#异步函数测试" class="headerlink" title="异步函数测试"></a>异步函数测试</h3><p>新建文件book.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line"></div><div class="line">exports.read = <span class="function">(<span class="params">cb</span>) =&gt;</span> &#123;</div><div class="line">        fs.readFile(<span class="string">'./book.txt'</span>, <span class="string">'utf-8'</span>, (err, result) =&gt; &#123;</div><div class="line">            <span class="keyword">if</span> (err) <span class="keyword">return</span> cb(err);</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">"result"</span>,result);</div><div class="line">            cb(<span class="literal">null</span>, result);</div><div class="line">        &#125;) </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>新建文件book.test.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> book = <span class="built_in">require</span>(<span class="string">'./book'</span>);</div><div class="line"><span class="keyword">let</span> expect = <span class="built_in">require</span>(<span class="string">"chai"</span>).expect;</div><div class="line"><span class="keyword">let</span> book = <span class="built_in">require</span>(<span class="string">'./book'</span>);</div><div class="line"><span class="keyword">let</span> expect = <span class="built_in">require</span>(<span class="string">"chai"</span>).expect;</div><div class="line"></div><div class="line">describe(<span class="string">"async"</span>, () =&gt; &#123;</div><div class="line">  it(<span class="string">'read book async'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">done</span>) </span>&#123;</div><div class="line">    book.read(<span class="function">(<span class="params">err, result</span>) =&gt;</span> &#123;</div><div class="line">      expect(err).equal(<span class="literal">null</span>);</div><div class="line">      expect(result).to.be.a(<span class="string">'string'</span>);</div><div class="line">      done();</div><div class="line">    &#125;)</div><div class="line">  &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>运行mocha book.test.js,我们会发现成功了，但是如果我们把book.js增加一个定时函数，改为如下例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line">exports.read = <span class="function">(<span class="params">cb</span>) =&gt;</span> &#123;</div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        fs.readFile(<span class="string">'./book.txt'</span>, <span class="string">'utf-8'</span>, (err, result) =&gt; &#123;</div><div class="line">            <span class="keyword">if</span> (err) <span class="keyword">return</span> cb(err);</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">"result"</span>,result);</div><div class="line">            cb(<span class="literal">null</span>, result);</div><div class="line">        &#125;) </div><div class="line">    &#125;, <span class="number">3000</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>会发现报如下错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Timeout of 2000ms exceeded.</div></pre></td></tr></table></figure></p>
-<p>这是因为mocha默认每个测试用例最多执行2000毫秒，如果到时没有得到结果，就报错。所以我们在进行异步操作的时候，需要额外指定timeout时间。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mocha --timeout 5000 book.test.js</div></pre></td></tr></table></figure></p>
-<p>这样就保证测试用例成功。</p>
-<h3 id="API测试"><a href="#API测试" class="headerlink" title="API测试"></a>API测试</h3><p>单单使用Mocha和should就几乎可以满足所有JavaScript函数的单元测试。但是对于Node应用而言，不仅仅是函数的集合，比如一个web应用的测试。这时候就需要配合一个http代理，完成Http请求和路由的测试。<br>Supertest是一个HTTP代理服务引擎，可以模拟一切HTTP请求行为。Supertest可以搭配任意的应用框架，从而进行应用的单元测试。<br>1.安装supertest<br><code>npm i supertest –save-dev</code><br>2.传入应用来实例化supertest<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> app = <span class="keyword">new</span> koa();</div><div class="line"><span class="keyword">let</span> server = app.listen(<span class="number">0</span>);</div><div class="line"><span class="keyword">this</span>.request = supertest(server);</div></pre></td></tr></table></figure></p>
-<p>3.调用API进行测试<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//get</span></div><div class="line">describe(<span class="string">'GET /users'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; </div><div class="line">    it(<span class="string">'respond with json'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">done</span>)</span>&#123; </div><div class="line">        request(app) </div><div class="line">        .get(<span class="string">'/user'</span>) </div><div class="line">        .set(<span class="string">'Accept'</span>, <span class="string">'application/json'</span>) </div><div class="line">        .expect(<span class="number">200</span>) </div><div class="line">        .end(<span class="function"><span class="keyword">function</span>(<span class="params">err, res</span>)</span>&#123; </div><div class="line">            should.not.exist(err); </div><div class="line">            res.text.should.containEql(<span class="string">'success'</span>); </div><div class="line">            done(); </div><div class="line">        &#125;); </div><div class="line">    &#125;); </div><div class="line">&#125;);</div><div class="line"><span class="comment">//post</span></div><div class="line">describe(<span class="string">'test login'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; </div><div class="line">    it(<span class="string">'login sucessfully'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">done</span>) </span>&#123; </div><div class="line">        request.post(<span class="string">'/user'</span>) </div><div class="line">        .send(&#123; <span class="attr">username</span>: <span class="string">'username'</span>, <span class="attr">password</span>: <span class="string">'123456'</span> &#125;) </div><div class="line">        .end(<span class="function"><span class="keyword">function</span> (<span class="params">err, res</span>) </span>&#123; </div><div class="line">            should.not.exists(err); </div><div class="line">            done(); </div><div class="line">        &#125;); </div><div class="line">    &#125;); </div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>另外，可以通过.attach()方法测试文件上传。</p>
-<h2 id="常用命令行"><a href="#常用命令行" class="headerlink" title="常用命令行"></a>常用命令行</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">node ./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha</div><div class="line">open coverage/lcov-report/index.html</div></pre></td></tr></table></figure>
-<h2 id="生命钩子"><a href="#生命钩子" class="headerlink" title="生命钩子"></a>生命钩子</h2><p>mocha一共四个生命钩子<br>before()：在该区块的所有测试用例之前执行<br>after()：在该区块的所有测试用例之后执行<br>beforeEach()：在每个单元测试前执行<br>afterEach()：在每个单元测试后执行</p>
+<h1 id="Hexo简介"><a href="#Hexo简介" class="headerlink" title="Hexo简介"></a>Hexo简介</h1><blockquote>
+<p>A fast, simple &amp; powerful blog framework.–Hexo官网</p>
+</blockquote>
+<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。它有下面几个特点：</p>
+<ul>
+<li>超快速度<br>Node.js 所带来的超快生成速度，让上百个页面在几秒内瞬间完成渲染。</li>
+<li>支持Markdown<br>Hexo 支持 GitHub Flavored Markdown 的所有功能，甚至可以整合 Octopress 的大多数插件。</li>
+<li>一键部署<br>只需一条指令即可部署到Github Pages，或其他网站</li>
+<li>丰富的插件<br>Hexo 拥有强大的插件系统，安装插件可以让 Hexo 支持 Jade, CoffeeScript。  </li>
+</ul>
+<p>通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的 标签插件 来快速的插入特定形式的内容。</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>安装 Hexo 相当简单。然而在安装前，您必须检查电脑中是否已安装下列应用程序：</p>
+<ul>
+<li>Node.js</li>
+<li>Git</li>
+</ul>
+<p>网上有很多的安装教程，这里不做赘述。<br>接下来只需要使用 npm 即可完成 Hexo 的安装。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
+<p>安装 Hexo 完成后，我们首先需要为我们的项目创建一个指定文件夹，在指定文件夹中执行下列命令， Hexo 将会在指定文件夹中新建所需要的文件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init</div></pre></td></tr></table></figure></p>
+<p>等待安装，安装完成后，<span id="inline-green">指定文件夹</span> 的目录如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── _config.yml</div><div class="line">├── package.json</div><div class="line">├── scaffolds</div><div class="line">├── source</div><div class="line">|   ├── _drafts</div><div class="line">|   └── _posts</div><div class="line">└──</div></pre></td></tr></table></figure></p>
+<p>继续执行命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div><div class="line">$ hexo s --debug</div></pre></td></tr></table></figure></p>
+<p>Hexo 将 source 文件夹中除 <em>posts 文件夹之外，开头命名为 </em>(下划线)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件夹会被拷贝过去。<br>这个时候，我们在浏览器中访问 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> ，就可以看到基于 Hexo 的默认主题的原型。</p>
+<h1 id="主题扩展功能"><a href="#主题扩展功能" class="headerlink" title="主题扩展功能"></a>主题扩展功能</h1><p>首先，我们需要明白：</p>
+<blockquote>
+<p>在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml 。其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。<br>  我们约定，将前者称为 <strong>站点配置文件</strong>，后者称为 <strong>主题配置文件</strong><br>  可以通过hexo的官网选择喜欢的模板进行使用。</p>
+</blockquote>
+<h1 id="发布到github-io"><a href="#发布到github-io" class="headerlink" title="发布到github.io"></a>发布到github.io</h1><p>在github中创建仓库，命名方式为<strong>用户名.github.io</strong>，一定要以这种方式命名，并且每个github账户只能有一个pages。在站点配置文件中增加发布仓库:<br><figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: https://github.com/DaisyGXL/DaisyGXL.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
+<p>运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div><div class="line">$ hexo d</div></pre></td></tr></table></figure></p>
+<p>完成编译发布过程。 </p>
 
       
     </div>
@@ -629,13 +638,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/node/" rel="tag"><i class="fa fa-tag"></i> node</a>
+            <a href="/tags/blog/" rel="tag"><i class="fa fa-tag"></i> blog</a>
           
-            <a href="/tags/单元测试/" rel="tag"><i class="fa fa-tag"></i> 单元测试</a>
+            <a href="/tags/github/" rel="tag"><i class="fa fa-tag"></i> github</a>
           
-            <a href="/tags/mocha/" rel="tag"><i class="fa fa-tag"></i> mocha</a>
-          
-            <a href="/tags/supertest/" rel="tag"><i class="fa fa-tag"></i> supertest</a>
+            <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
           
         </div>
       
@@ -644,16 +651,12 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/28/blog/" rel="next" title="基于Hexo和GitPages搭建个人博客">
-                <i class="fa fa-chevron-left"></i> 基于Hexo和GitPages搭建个人博客
-              </a>
-            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/14/gitbook/" rel="prev" title="git-pages">
-                git-pages <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/28/ES6项目构建/" rel="prev" title="ES6项目构建">
+                ES6项目构建 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -808,7 +811,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mocha介绍"><span class="nav-number">1.</span> <span class="nav-text">Mocha介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单测试脚本"><span class="nav-number">3.</span> <span class="nav-text">简单测试脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#断言库"><span class="nav-number">4.</span> <span class="nav-text">断言库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用法"><span class="nav-number">5.</span> <span class="nav-text">用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常规函数测试"><span class="nav-number">5.1.</span> <span class="nav-text">常规函数测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异步函数测试"><span class="nav-number">5.2.</span> <span class="nav-text">异步函数测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#API测试"><span class="nav-number">5.3.</span> <span class="nav-text">API测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令行"><span class="nav-number">6.</span> <span class="nav-text">常用命令行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生命钩子"><span class="nav-number">7.</span> <span class="nav-text">生命钩子</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo简介"><span class="nav-number">1.</span> <span class="nav-text">Hexo简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主题扩展功能"><span class="nav-number">3.</span> <span class="nav-text">主题扩展功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#发布到github-io"><span class="nav-number">4.</span> <span class="nav-text">发布到github.io</span></a></li></ol></div>
             
           </div>
         </section>
