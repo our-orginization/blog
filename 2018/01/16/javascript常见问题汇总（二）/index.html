@@ -95,7 +95,11 @@
 <meta property="og:description" content="本文为日常开发过程中HTML和JS基本调试方法汇总。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://p0.meituan.net/dpnewvc/ecba775f4acec4e87c97e13be34672ff478.png">
-<meta property="og:updated_time" content="2018-02-09T03:28:46.000Z">
+<meta property="og:image" content="https://p0.meituan.net/dpnewvc/1c6d741d8ecf8ce6b21ec45a7c4c336e9787.png">
+<meta property="og:image" content="https://p0.meituan.net/dpnewvc/b6ddeb691214e910855c5dd8462579997791.png">
+<meta property="og:image" content="https://p0.meituan.net/dpnewvc/e47d5f2da69ad3f183ca18192933f8e717090.png">
+<meta property="og:image" content="https://p0.meituan.net/dpnewvc/e47d5f2da69ad3f183ca18192933f8e717090.png">
+<meta property="og:updated_time" content="2018-02-11T08:33:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript常见问题汇总（二）">
 <meta name="twitter:description" content="本文为日常开发过程中HTML和JS基本调试方法汇总。">
@@ -586,7 +590,16 @@
 <li>:visited — 将元素设置为已访问状态*</li>
 <li>Scroll into view — 将网页快速滑动到元素所在位置</li>
 <li>Break on… -&gt;subtree modification — 在子节点被修改的时候中断执行</li>
-<li>Break on… -&gt;attribute modification — 在属性被修改的时候中断执行<h3 id="元素快速定位"><a href="#元素快速定位" class="headerlink" title="元素快速定位"></a>元素快速定位</h3><img src="https://p0.meituan.net/dpnewvc/ecba775f4acec4e87c97e13be34672ff478.png"><br>点击该图标，然后在页面上选中元素，DOM tree就会快速定位到该元素的源代码位置。<h3 id="捕获节点截图"><a href="#捕获节点截图" class="headerlink" title="捕获节点截图"></a>捕获节点截图</h3>一个很酷的技巧就是你可以将选中的节点生成一张png图片：<br>点击鼠标左键选中元素，使用 Cmd+Shift+P/Ctrl+Shift+P打开命令输入窗口，输入node screenshot，选中 Capture node screenshot，将会生成一张PNG图片。</li>
+<li>Break on… -&gt;attribute modification — 在属性被修改的时候中断执行<h3 id="元素快速定位"><a href="#元素快速定位" class="headerlink" title="元素快速定位"></a>元素快速定位</h3><img src="https://p0.meituan.net/dpnewvc/ecba775f4acec4e87c97e13be34672ff478.png"><br>点击该图标，然后在页面上选中元素，DOM tree就会快速定位到该元素的源代码位置。<h3 id="捕获节点截图"><a href="#捕获节点截图" class="headerlink" title="捕获节点截图"></a>捕获节点截图</h3>一个很酷的技巧就是你可以将选中的节点生成一张png图片：<br>点击鼠标左键选中元素，使用 Cmd+Shift+P/Ctrl+Shift+P打开命令输入窗口，输入node screenshot，选中 Capture node screenshot，将会生成一张PNG图片。<h3 id="通过字符串、CSS选择器、XPath快速查找"><a href="#通过字符串、CSS选择器、XPath快速查找" class="headerlink" title="通过字符串、CSS选择器、XPath快速查找"></a>通过字符串、CSS选择器、XPath快速查找</h3>当元素标签打开，输入Cmd+f，将会打开一个输入窗口。<br><img src="https://p0.meituan.net/dpnewvc/1c6d741d8ecf8ce6b21ec45a7c4c336e9787.png"><h3 id="直接编辑源文件"><a href="#直接编辑源文件" class="headerlink" title="直接编辑源文件"></a>直接编辑源文件</h3>打开source标签，选中并打开你想要编辑的文件并编辑，然后右键，在MacOS下，你可以将整个文件夹拖动到你本地的目录。你也可以右键选择Add folder to workspace，接下来你所有的更改都会自动反应到对应的本地代码。</li>
+</ul>
+<h2 id="元素标签的右侧区域"><a href="#元素标签的右侧区域" class="headerlink" title="元素标签的右侧区域"></a>元素标签的右侧区域</h2><h3 id="样式（style）"><a href="#样式（style）" class="headerlink" title="样式（style）"></a>样式（style）</h3><p>选中Element中DOM树下的某个元素，对应的样式及其他属性也会在右边显示。<br><img src="https://p0.meituan.net/dpnewvc/b6ddeb691214e910855c5dd8462579997791.png"></p>
+<ul>
+<li>:hov 当你展开:hov，其提供的选项可以让你激活元素的不同状态，比如hover, focus。在DOM tree上也可以直接对元素进行这样的操作。</li>
+<li>.cls 对选中的元素添加class</li>
+<li>‘+’ 添加新的style到该元素<br>在Styles标签，你可以找到对应元素适配的所有的style:</li>
+<li>黄色的警告标识表面样式的名字或则值格式不正确</li>
+<li>被划掉意味着被其它样式覆盖</li>
+<li>灰色背景的样式文件是有效但不可编辑。这些样式文件来自于浏览器。<h3 id="样式的计算结果"><a href="#样式的计算结果" class="headerlink" title="样式的计算结果"></a>样式的计算结果</h3><img src="https://p0.meituan.net/dpnewvc/e47d5f2da69ad3f183ca18192933f8e717090.png"><br>上图所示的矩形框可视化地展示了padding, border和margin的效果以及其值。<br>对于非静态定位的元素，top、right、bottom、left属性会显示出来。所有的值都可以左键双击，然后修改。<h3 id="Event-Listeners"><a href="#Event-Listeners" class="headerlink" title="Event Listeners"></a>Event Listeners</h3><img src="https://p0.meituan.net/dpnewvc/e47d5f2da69ad3f183ca18192933f8e717090.png"></li>
 </ul>
 
       
@@ -651,16 +664,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/16/Chrome在电脑上模拟微信浏览器/" rel="next" title="Chrome在电脑上模拟微信浏览器">
-                <i class="fa fa-chevron-left"></i> Chrome在电脑上模拟微信浏览器
+              <a href="/2018/01/16/javascript常见问题汇总（一）/" rel="next" title="javascript常见问题汇总（一）">
+                <i class="fa fa-chevron-left"></i> javascript常见问题汇总（一）
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/16/javascript常见问题汇总（一）/" rel="prev" title="javascript常见问题汇总（一）">
-                javascript常见问题汇总（一） <i class="fa fa-chevron-right"></i>
+              <a href="/2018/01/16/Chrome在电脑上模拟微信浏览器/" rel="prev" title="Chrome在电脑上模拟微信浏览器">
+                Chrome在电脑上模拟微信浏览器 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -815,7 +828,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#快速进入对着页面任何元素-Elements"><span class="nav-number">1.</span> <span class="nav-text">快速进入对着页面任何元素(Elements)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元素-Elements-标签的左侧"><span class="nav-number">2.</span> <span class="nav-text">元素(Elements)标签的左侧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM树"><span class="nav-number">2.1.</span> <span class="nav-text">DOM树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元素快速定位"><span class="nav-number">2.2.</span> <span class="nav-text">元素快速定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#捕获节点截图"><span class="nav-number">2.3.</span> <span class="nav-text">捕获节点截图</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#快速进入对着页面任何元素-Elements"><span class="nav-number">1.</span> <span class="nav-text">快速进入对着页面任何元素(Elements)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元素-Elements-标签的左侧"><span class="nav-number">2.</span> <span class="nav-text">元素(Elements)标签的左侧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM树"><span class="nav-number">2.1.</span> <span class="nav-text">DOM树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元素快速定位"><span class="nav-number">2.2.</span> <span class="nav-text">元素快速定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#捕获节点截图"><span class="nav-number">2.3.</span> <span class="nav-text">捕获节点截图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过字符串、CSS选择器、XPath快速查找"><span class="nav-number">2.4.</span> <span class="nav-text">通过字符串、CSS选择器、XPath快速查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#直接编辑源文件"><span class="nav-number">2.5.</span> <span class="nav-text">直接编辑源文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元素标签的右侧区域"><span class="nav-number">3.</span> <span class="nav-text">元素标签的右侧区域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#样式（style）"><span class="nav-number">3.1.</span> <span class="nav-text">样式（style）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样式的计算结果"><span class="nav-number">3.2.</span> <span class="nav-text">样式的计算结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Event-Listeners"><span class="nav-number">3.3.</span> <span class="nav-text">Event Listeners</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
