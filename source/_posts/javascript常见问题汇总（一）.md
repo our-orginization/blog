@@ -291,3 +291,89 @@ var add10 = add(10);
 console.log(add10(1)); // 输出11
 ```
 
+## apply, call & bind
+apply, call 和 bind的共同点是第一个参数都是this，即函数运行时依赖的上下文。
+其中，call方法是最简单的，它等价于指定this值调用函数：
+```javascript
+var user = {name: 'daisy', whatsyourname:function(){ console.log(this.name)}};
+
+user.whatsyourname()
+// daisy
+
+var user2 = {name: 'Daisy'};
+user.whatsyourname.call(user2)
+// Daisy
+```
+applyf和call方法类似，不同的是，apply方法使用数组指定参数，而call方法每个参数单独需要指定：
+- apply(thisArg, [argsArray])
+- call(thisArg, arg1, arg2, …)
+```javascript
+var user = {greet:'Hello', sayhi:function(userName) {console.log(this.greet + ' ' + userName)}};
+
+user.sayhi('Daisy');
+//  Hello Daisy
+
+var greet1 = {
+    greet: "Hi"
+};
+
+user.sayhi.apply(greet1, 'daisy');
+// Uncaught TypeError: CreateListFromArrayLike called on non-object at <anonymous>:1:12 (anonymous) @ VM453:1
+
+user.sayhi.apply(greet1, ['daisy']);
+// Hi daisy
+
+user.sayhi.call(greet1, 'daisy');
+// Hi daisy
+```
+使用bind方法，可以为函数绑定this值，然后作为一个新的函数返回：
+```javascript
+var user = {
+     greet: "pu!",
+     greetUser: function(userName) {
+     	console.log(this.greet + " " + userName);
+     }
+};
+
+var greetHi= user.greetUser.bind({greet: "Hi"});
+var greetHello = user.greetUser.bind({greet: "Hello"});
+
+greetHi("Daisy");
+// Hi Daisy
+
+greetHello("Daisy");
+// Hello Daisy
+```
+
+## Memoization
+Memoization用于优化比较耗时的计算，通过将计算结果缓存到内存中，这样对于同样的输入值，下次只需要中内存中读取结果。
+```javascript
+function memoizeFunction(func)
+{
+    var cache = {};
+    return function()
+    {
+        var key = arguments[0];
+        if (cache[key])
+        {
+            return cache[key];
+        }
+        else
+        {
+            var val = func.apply(this, arguments);
+            cache[key] = val;
+            return val;
+        }
+    };
+}
+
+
+var fibonacci = memoizeFunction(function(n)
+{
+    return (n === 0 || n === 1) ? n : fibonacci(n - 1) + fibonacci(n - 2);
+});
+
+console.log(fibonacci(100)); // 输出354224848179262000000
+console.log(fibonacci(100)); // 输出354224848179262000000
+```
+代码中，第2次计算fibonacci(100)则只需要在内存中直接读取结果。
