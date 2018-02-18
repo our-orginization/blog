@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javascript,调试,HTML," />
+  <meta name="keywords" content="调试,javascript,HTML," />
 
 
 
@@ -87,7 +87,7 @@
 
 
 <meta name="description" content="本文为日常开发过程中HTML和JS基本调试方法汇总。">
-<meta name="keywords" content="javascript,调试,HTML">
+<meta name="keywords" content="调试,javascript,HTML">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript常见问题汇总（二）">
 <meta property="og:url" content="http://our-orginization.github.io/2018/01/16/javascript常见问题汇总（二）/index.html">
@@ -99,7 +99,7 @@
 <meta property="og:image" content="https://p0.meituan.net/dpnewvc/b6ddeb691214e910855c5dd8462579997791.png">
 <meta property="og:image" content="https://p0.meituan.net/dpnewvc/e47d5f2da69ad3f183ca18192933f8e717090.png">
 <meta property="og:image" content="https://p0.meituan.net/dpnewvc/9fe9a6dd1a76cfad5078e42c7807a78937091.png">
-<meta property="og:updated_time" content="2018-02-11T09:11:13.000Z">
+<meta property="og:updated_time" content="2018-02-18T11:18:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript常见问题汇总（二）">
 <meta name="twitter:description" content="本文为日常开发过程中HTML和JS基本调试方法汇总。">
@@ -609,7 +609,7 @@
 <p>可以用%s来输出字符串，%i来输出数字，%c来自定义格式。</p>
 <h3 id="将对象以表格的形式展示"><a href="#将对象以表格的形式展示" class="headerlink" title="将对象以表格的形式展示"></a>将对象以表格的形式展示</h3><p>有时候，你需要查看一个复杂的对象元素。通常，我们都会使用console.log将其打印出来然后查看。其实，你还可以使用console.table，让对象更加美观地呈现出来。</p>
 <h3 id="使用console-time-和console-timeEnd-来记录时间"><a href="#使用console-time-和console-timeEnd-来记录时间" class="headerlink" title="使用console.time()和console.timeEnd()来记录时间"></a>使用console.time()和console.timeEnd()来记录时间</h3><p>了解代码的执行时间是非常有用的，特别是调试耗时的for循环。你可以通过定义不同的名字来设置多个timer。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.time(<span class="string">'Time1'</span>);</div><div class="line"><span class="keyword">var</span> items = [];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">10000</span>; i++) &#123;</div><div class="line">    items.push(index: i);</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.endTime(<span class="string">'Time1'</span>);</div><div class="line"><span class="comment">// Time1: 12.31ms</span></div></pre></td></tr></table></figure></p>
-<h3 id="将minify的代码还原"><a href="#将minify的代码还原" class="headerlink" title="将minify的代码还原"></a>将minify的代码还原</h3><p>有时候，生产环境的代码出现问题，然而source map并没有和压缩的代码绑定在一起，所有无法看到还原的代码。不用担心，谷歌浏览器可以将JavaScript代码还原到一个可读的样式。尽管还是比不上真实的代码，但是可以很好的帮助你去分析问题了。点击{}来结构化代码：</p>
+<h3 id="将minify的代码还原"><a href="#将minify的代码还原" class="headerlink" title="将minify的代码还原"></a>将minify的代码还原</h3><p>有时候，生产环境的代码出现问题，然而source map并没有和压缩的代码绑定在一起，所有无法看到还原的代码。不用担心，谷歌浏览器可以将JavaScript代码还原到一个可读的样式。尽管还是比不上真实的代码，但是可以很好的帮助你去分析问题了。点击{}来结构化代码。</p>
 
       
     </div>
@@ -660,9 +660,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag"><i class="fa fa-tag"></i> javascript</a>
-          
             <a href="/tags/调试/" rel="tag"><i class="fa fa-tag"></i> 调试</a>
+          
+            <a href="/tags/javascript/" rel="tag"><i class="fa fa-tag"></i> javascript</a>
           
             <a href="/tags/HTML/" rel="tag"><i class="fa fa-tag"></i> HTML</a>
           
@@ -673,8 +673,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/16/Chrome在电脑上模拟微信浏览器/" rel="next" title="Chrome在电脑上模拟微信浏览器">
-                <i class="fa fa-chevron-left"></i> Chrome在电脑上模拟微信浏览器
+              <a href="/2018/01/09/Flex实现五种常用布局/" rel="next" title="Flex实现五种常用布局">
+                <i class="fa fa-chevron-left"></i> Flex实现五种常用布局
               </a>
             
           </div>
