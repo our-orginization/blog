@@ -20,6 +20,8 @@ typeof 'hi'           // "string"
 typeof Math           // "object"
 typeof null           // "object"
 typeof Symbol('Hi')   // "symbol"
+typeof {} === 'object'  // true
+typeof [] === 'object'  // true
 ```
 
 ### Null vs. undefined
@@ -89,6 +91,13 @@ false == {}         // false
 0 == []             // true
 0 == {}             // false
 0 == null           // false
+
+'abc' === 'abc' // true
+1 === 1         // true
+// 然而这些不行
+[1,2,3] === [1,2,3] // false
+{a: 1} === {a: 1}   // false
+{} === {}           // false
 ```
 
 ### 值 vs. 引用
@@ -377,3 +386,69 @@ console.log(fibonacci(100)); // 输出354224848179262000000
 console.log(fibonacci(100)); // 输出354224848179262000000
 ```
 代码中，第2次计算fibonacci(100)则只需要在内存中直接读取结果。
+### 立即调用的函数表达式（IIFE）
+一个IIFE是一个函数表达式在定义之后立即被调用。常用在你想对一个新声明的变量创建一个隔离的作用域。
+它的格式为: (function(){....})()。前面的大括号用于告诉编译器这里不仅仅是函数定义，后面的大括号用于执行该函数。
+使用IIFE可以：
+- 为函数绑定私有数据
+- 创建一个新的环境
+- 避免污染全局命名空间
+```javascript
+var result = [];
+for (var i=0; i < 5; i++) {
+  result.push( function() { return i } );
+}
+console.log( result[1]() ); // 5
+console.log( result[3]() ); // 5
+result = [];
+for (var i=0; i < 5; i++) {
+  (function () {
+    var j = i; // copy current value of i
+    result.push( function() { return j } );
+  })();
+}
+console.log( result[1]() ); // 1
+console.log( result[3]() ); // 3
+```
+### this
+要理解JavaScript中this关键字，特别是它指向谁，有时候相当地复杂。this的值通常由函数的执行环境决定。简单的说，执行环境指函数如何被调用的。this像是一个占位符(placeholder)，它指向当方法被调用时，调用对应的方法的对象。
+下面有序地列出了判断this指向的规则。如果第一条匹配，那么就不用去检查第二条了:
+- new绑定 - 当使用new关键字调用函数的时候，this指向新构建的对象。
+```javascript
+function Person(name, age) {
+  this.name = name;
+  this.age =age;
+  console.log(this);
+}
+const Rachel = new Person('Rachel', 30);   // { age: 30, name: 'Rachel' }
+```
+- 显示绑定(Explicit binding) - 当使用call或则apply的时候，我们显示的传入一个对象参数，该参数会绑定到this。 注意：.bind()函数不一样。用bind定义一个新的函数，但是依然绑定到原来的对象。
+```javascript
+function fn() {
+  console.log(this);
+}
+var agent = {id: '007'};
+fn.call(agent);    // { id: '007' }
+fn.apply(agent);   // { id: '007' }
+var boundFn = fn.bind(agent);
+boundFn();         // { id: '007' }
+```
+- 隐式绑定 - 当一个函数在某个环境下调用(在某个对象里)，this指向该对象。也就是说该函数是对象的一个方法。
+```javascript
+var building = {
+  floors: 5,
+  printThis: function() {
+    console.log(this);
+  }
+}
+building.printThis();  // { floors: 5, printThis: function() {…} }
+```
+- 默认绑定 - 如果上面所有的规则都不满足，那么this指向全局对象(在浏览器中，就是window对象)。当函数没有绑定到某个对象，而单独定义的时候，该函数默认绑定到全局对象。
+```javascript
+function printWindow() {
+  console.log(this)
+}
+printWindow();  // window object
+
+```
+- 词法(Lexical) this - 当是使用=>来定义函数时，this指向定义该函数时候外层的this。 备注：大概是和定义的词法(=>)有关，把它称作Lexical this。
